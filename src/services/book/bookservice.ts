@@ -3,12 +3,9 @@ import type { IHttpClientRequestParameters } from 'http/shared/ihttpclientreques
 import { http } from 'http/httpclient';
 
 export class BookService {
+    private readonly BASE_URL = "https://cadbook.herokuapp.com/api/v1";
 
-    private BASE_URL: string = process.env['BOOKS_BASE_URL'];
-
-    all(): Promise<IBook[]> {
-        console.log(this.BASE_URL);
-        
+    all(): Promise<IBook[]> {        
         const requestParameters: IHttpClientRequestParameters<IBook[]> = {
           url: this.BASE_URL+'/books',
           requiresToken: false
