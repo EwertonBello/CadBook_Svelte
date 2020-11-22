@@ -1,13 +1,18 @@
+<script context="module" lang="ts">
+    import { book } from '../../services/book/bookservice';
+    import type { IBook } from '../../services/book/shared/ibook';
+    
+	export async function preload() {
+        let response: any = await book.all();
+        let books: IBook[] = response.data;
+        return { books };
+	}
+</script>
+
 <script lang="ts">
-    import { teste } from './index';
     import { Button } from 'svelte-materialify';
 
-    export let books = [
-        {'title': 'title1', 'slug':'slug1'},
-        {'title': 'title2', 'slug':'slug2'},
-        {'title': 'title3', 'slug':'slug3'},
-        {'title': 'title4', 'slug':'slug4'},
-    ]
+    export let books: IBook[];
 </script>
 
 
@@ -17,10 +22,10 @@
 
 <h1>Livros Livros Livros...</h1>
 
-<Button class="primary-color" on:click={teste}>Bora lá</Button>
+<Button class="primary-color" on:click={()=>console.log("É né...")}>Bora lá</Button>
 
 <ul>
 	{#each books as book}
-		<li><a rel="prefetch" href="books/{book.slug}">{book.title}</a></li>
+		<li><a rel="prefetch" href="books/{book.id}">{book.title}</a></li>
 	{/each}
 </ul>
