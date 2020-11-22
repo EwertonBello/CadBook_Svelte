@@ -4,7 +4,7 @@ import { http } from 'http/httpclient';
 
 export class BookService {
 
-    private BASE_URL: string = process.env['API_BASE_URL'];
+    private BASE_URL: string = process.env['BOOKS_BASE_URL'];
 
     all(): Promise<IBook[]> {
         console.log(this.BASE_URL);
