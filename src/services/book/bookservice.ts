@@ -4,9 +4,13 @@ import { http } from 'http/httpclient';
 
 export class BookService {
 
+    private BASE_URL: string = process.env['API_BASE_URL'];
+
     all(): Promise<IBook[]> {
+        console.log(this.BASE_URL);
+        
         const requestParameters: IHttpClientRequestParameters<IBook[]> = {
-          url: 'https://cadbook.herokuapp.com/api/v1/books',
+          url: this.BASE_URL+'/books',
           requiresToken: false
         }
 
@@ -15,7 +19,7 @@ export class BookService {
 
     byID(id: number): Promise<IBook> {
         const requestParameters: IHttpClientRequestParameters<IBook> = {
-          url: `https://cadbook.herokuapp.com/api/v1/books/${id}`,
+          url: this.BASE_URL+`/books/${id}`,
           requiresToken: false
         }
 
