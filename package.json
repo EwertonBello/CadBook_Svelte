@@ -1,7 +1,7 @@
 {
-  "name": "TODO",
-  "description": "TODO",
-  "version": "0.0.1",
+  "name": "CadBookSvelte",
+  "description": "CadBookSvelte",
+  "version": "1.2.0",
   "scripts": {
     "dev": "sapper dev",
     "build": "sapper build --legacy",
@@ -10,6 +10,7 @@
     "validate": "svelte-check --ignore src/node_modules/@sapper"
   },
   "dependencies": {
+    "axios": "^0.21.0",
     "compression": "^1.7.1",
     "polka": "next",
     "sirv": "^1.0.0"
