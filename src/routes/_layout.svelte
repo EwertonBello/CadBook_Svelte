@@ -1,22 +1,25 @@
 <script lang="ts">
-	import Nav from '../components/Nav.svelte';
+	import Toolbar from "../components/Toolbar.svelte";
+	import { MaterialApp } from "svelte-materialify";
 
-	export let segment: string;
+	let theme: any = "light";
+
+	function toggleTheme() {
+		if (theme === "light") theme = "dark";
+		else theme = "light";
+	}
 </script>
 
 <style>
-	main {
-		position: relative;
-		max-width: 56em;
-		background-color: white;
-		padding: 2em;
-		margin: 0 auto;
-		box-sizing: border-box;
+	.layout {
+		position:relative;
+		height:100vh;
 	}
 </style>
 
-<Nav {segment}/>
-
-<main>
-	<slot></slot>
-</main>
+<MaterialApp {theme}>
+	<div class="layout">
+		<Toolbar {toggleTheme}/>
+		<slot/>
+	</div>
+</MaterialApp>
