@@ -4,25 +4,41 @@
         List,
         ListItem,
         Icon,
+        Overlay
     } from 'svelte-materialify';
-    import { goto } from '@sapper/app';
 
-    export let active;
+    import { active } from './NavDrawerStore';
+
+    function toggleNavigation() {
+      active.update((active)=> active = !active)
+    }
+
 </script>
 
-<NavigationDrawer absolute {active}>
+<style>
+    a {
+        text-decoration: none;
+    }
+</style>
+
+<NavigationDrawer absolute active={$active}>
     <List>
-        <ListItem on:click={()=>goto('/')}>
-            <span slot="prepend">
-                <Icon class="mdi mdi-home" />
-            </span>
-            Home
-        </ListItem>
-        <ListItem on:click={()=>goto('books')}>
-            <span slot="prepend">
-                <Icon class="mdi mdi-book" />
-            </span>
-            Books
-        </ListItem>
+        <a href="/" on:click={toggleNavigation}>
+            <ListItem>
+                <span slot="prepend">
+                    <Icon class="mdi mdi-home" />
+                </span>
+                Home
+            </ListItem>
+        </a>
+        <a rel="prefetch" href="books" on:click={toggleNavigation}>
+            <ListItem>
+                <span slot="prepend">
+                    <Icon class="mdi mdi-book" />
+                </span>
+                Books
+            </ListItem>
+        </a>
     </List>
 </NavigationDrawer>
+<Overlay index={1} active={$active} on:click={toggleNavigation} absolute />

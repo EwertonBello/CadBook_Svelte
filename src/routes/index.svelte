@@ -3,14 +3,22 @@
 </script>
 
 <svelte:head>
-	<title>Sapper project template</title>
+	<title>Home</title>
 </svelte:head>
 
-<h1>Great success!</h1>
+<style>
+	img {
+		width: 200px;
+	}
+</style>
 
-<figure>
-	<img alt="Success Kid" src="{successkid}">
-	<figcaption>Have fun with Sapper!</figcaption>
-</figure>
-
-<p><strong>It is okay.</strong></p>
+<div class="container">
+	<h1>Great success!</h1>
+	
+	<figure>
+		<img alt="Success Kid" src="{successkid}">
+		<figcaption>Have fun with Sapper!</figcaption>
+	</figure>
+	
+	<p><strong>It is okay.</strong></p>
+</div>

@@ -10,8 +10,15 @@
 	}
 </script>
 
+<style>
+	.layout {
+		position:relative;
+		height:100vh;
+	}
+</style>
+
 <MaterialApp {theme}>
-	<div style="position:relative;height:250px">
+	<div class="layout">
 		<Toolbar {toggleTheme}/>
 		<slot/>
 	</div>
