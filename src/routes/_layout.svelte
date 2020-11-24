@@ -1,13 +1,7 @@
 <script lang="ts">
-	import Toolbar from "../components/toolbar/Toolbar.svelte";
 	import { MaterialApp } from "svelte-materialify";
+	import { theme } from '../theme/themeStore';
 
-	let theme: any = "light";
-
-	function toggleTheme() {
-		if (theme === "light") theme = "dark";
-		else theme = "light";
-	}
 </script>
 
 <style>
@@ -17,7 +11,7 @@
 	}
 </style>
 
-<MaterialApp {theme}>
+<MaterialApp theme={$theme}>
 	<div class="layout">
 		<slot/>
 	</div>
