@@ -5,7 +5,6 @@
   import { active } from "../navigationdrawer/NavigationDrawerStore";
   import { theme } from "../../theme/themeStore";
 
-  // export let toggleTheme;
   export let title: string;
 
   function toggleNavigation() {
