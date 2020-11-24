@@ -1,22 +1,18 @@
 <script lang="ts">
-	import Nav from '../components/Nav.svelte';
+	import { MaterialApp } from "svelte-materialify";
+	import { theme } from '../theme/themeStore';
 
-	export let segment: string;
 </script>
 
 <style>
-	main {
-		position: relative;
-		max-width: 56em;
-		background-color: white;
-		padding: 2em;
-		margin: 0 auto;
-		box-sizing: border-box;
+	.layout {
+		position:relative;
+		height:100vh;
 	}
 </style>
 
-<Nav {segment}/>
-
-<main>
-	<slot></slot>
-</main>
+<MaterialApp theme={$theme}>
+	<div class="layout">
+		<slot/>
+	</div>
+</MaterialApp>
