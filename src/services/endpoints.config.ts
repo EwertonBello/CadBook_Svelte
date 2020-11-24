@@ -1,0 +1,1 @@
+export const BOOKS_BASE_URL = "https://cadbook.herokuapp.com/api/v1";

@@ -3,16 +3,20 @@ import {
       AppBar,
       Button,
       Icon,
-      Overlay,
     } from 'svelte-materialify';
 
-    import NavigationDrawer from './NavigationDrawer.svelte';
-    import { active } from './NavDrawerStore';
+    import NavigationDrawer from '../navigationdrawer/NavigationDrawer.svelte';
+    import { active } from '../navigationdrawer/NavigationDrawerStore';
 
-    export let toggleTheme;
+    // export let toggleTheme;
+    export let title: string;
   
     function toggleNavigation() {
       active.update((active)=> active = !active)
+    }
+  
+    function toggleTheme() {
+      console.log("Mudou o tema");
     }
 </script>
   
@@ -23,7 +27,7 @@ import {
       <Icon class="mdi mdi-menu"/>
     </Button>
   </div>
-  <span slot="title"> CadBook </span>
+  <span slot="title"> {title} </span>
   <div style="flex-grow:1" />
   <Button icon depressed on:click="{toggleTheme}">
     <Icon class="mdi mdi-brightness-4"/>

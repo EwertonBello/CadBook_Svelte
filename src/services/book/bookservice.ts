@@ -2,8 +2,10 @@ import type { IBook } from './shared/ibook';
 import type { IHttpClientRequestParameters } from 'http/shared/ihttpclientrequestparameters';
 import { http } from 'http/httpclient';
 
+import { BOOKS_BASE_URL } from '../endpoints.config';
+
 export class BookService {
-    private readonly BASE_URL = "https://cadbook.herokuapp.com/api/v1";
+    private readonly BASE_URL = BOOKS_BASE_URL;
 
     all(): Promise<IBook[]> {        
         const requestParameters: IHttpClientRequestParameters<IBook[]> = {

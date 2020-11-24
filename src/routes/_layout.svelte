@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Toolbar from "../components/Toolbar.svelte";
+	import Toolbar from "../components/toolbar/Toolbar.svelte";
 	import { MaterialApp } from "svelte-materialify";
 
 	let theme: any = "light";
@@ -19,7 +19,6 @@
 
 <MaterialApp {theme}>
 	<div class="layout">
-		<Toolbar {toggleTheme}/>
 		<slot/>
 	</div>
 </MaterialApp>

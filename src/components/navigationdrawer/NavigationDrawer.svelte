@@ -7,7 +7,7 @@
         Overlay
     } from 'svelte-materialify';
 
-    import { active } from './NavDrawerStore';
+    import { active } from './NavigationDrawerStore';
 
     function toggleNavigation() {
       active.update((active)=> active = !active)

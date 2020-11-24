@@ -1,9 +1,11 @@
 <script>
 	import successkid from 'images/successkid.jpg';
+	import Toolbar from '../components/toolbar/Toolbar.svelte';
+
 </script>
 
 <svelte:head>
-	<title>Home</title>
+	<title>CadBook - Svelte</title>
 </svelte:head>
 
 <style>
@@ -12,6 +14,7 @@
 	}
 </style>
 
+<Toolbar title="Home"/>
 <div class="container">
 	<h1>Great success!</h1>
 	

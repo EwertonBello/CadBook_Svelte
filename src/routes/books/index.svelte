@@ -1,6 +1,8 @@
 <script context="module" lang="ts">
     import { book } from '../../services/book/bookservice';
     import type { IBook } from '../../services/book/shared/ibook';
+
+    import Toolbar from '../../components/toolbar/Toolbar.svelte';
     
 	export async function preload() {
         let response: any = await book.all();
@@ -15,11 +17,7 @@
     export let books: IBook[];
 </script>
 
-
-<svelte:head>
-	<title>Books</title>
-</svelte:head>
-
+<Toolbar title="Books"/>
 <h1>Livros Livros Livros...</h1>
 
 <Button class="primary-color" on:click={()=>console.log("É né...")}>Bora lá</Button>
