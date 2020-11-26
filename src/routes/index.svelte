@@ -30,7 +30,8 @@
 </style>
 
 <Toolbar title="Home"/>
-<div class="container">
+
+<div class="container pb-2">
 	<div class="theme--dark" id="home">
 		<Container class="pt-6 pb-6">
 			<Row>
@@ -61,5 +62,5 @@
 			</Row>
 		</Container>
 	</div>
-	<Footer/>
 </div>
+<Footer/>
