@@ -1,11 +1,10 @@
 <script context="module" lang="ts">
-    import { book } from '../../services/book/bookservice';
+    import { bookservice } from '../../services/book/bookservice';
     import type { IBook } from '../../services/book/shared/ibook';
 
-    
 	export async function preload() {
-        let response: any = await book.all();
-        let books: IBook[] = response.data;
+        let { data }: any = await bookservice.all();
+        let books: IBook[] = data;
         return { books };
 	}
 </script>
@@ -14,28 +13,31 @@
     import { 
         Button,
         Card,
-        Row,
-        Col,
         CardTitle,
         CardSubtitle,
         CardActions,
         Icon
     } from 'svelte-materialify';
+    import ImageLoader from 'svelte-lazy-image-loader';
+
     import Toolbar from '../../components/toolbar/Toolbar.svelte';
     import Footer from '../../components/footer/Footer.svelte';
 
     export let books: IBook[];
 </script>
 
-
-
 <Toolbar title="Books"/>
 
 <div class="container pl-2 pr-2">
     {#each books as book}
         <div class="d-flex justify-center mt-4 mb-4">
-            <Card style="max-width:350px">
-            <img src="//picsum.photos/350?random={book.id}" width="100%" alt="background" />
+            <Card style="max-width:80%">
+            <ImageLoader
+                url="//picsum.photos/350?random={book.id}"
+                alt="random image"
+                imageWidth="100%"
+                placeholderWidth="100%"
+            />
             <CardTitle>{ book.title }</CardTitle>
             <CardSubtitle>
                 Autor: { book.user.name }<br/>

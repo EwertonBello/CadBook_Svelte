@@ -1,7 +1,7 @@
 {
   "name": "CadBookSvelte",
   "description": "CadBookSvelte",
-  "version": "1.6.0",
+  "version": "1.9.0",
   "scripts": {
     "dev": "sapper dev",
     "build": "sapper build --legacy",
@@ -13,7 +13,8 @@
     "axios": "^0.21.0",
     "compression": "^1.7.1",
     "polka": "next",
-    "sirv": "^1.0.0"
+    "sirv": "^1.0.0",
+    "svelte-lazy-image-loader": "^1.0.4"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
