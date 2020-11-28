@@ -26,4 +26,4 @@ export class BookService {
     }
   }
 
-export const book = new BookService();
+export const bookservice = new BookService();

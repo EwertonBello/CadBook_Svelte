@@ -1,11 +1,11 @@
 <script context="module" lang="ts">
-    import { book } from '../../services/book/bookservice';
+    import { bookservice } from '../../services/book/bookservice';
     import type { IBook } from '../../services/book/shared/ibook';
 
     
 	export async function preload() {
-        let response: any = await book.all();
-        let books: IBook[] = response.data;
+        let { data }: any = await bookservice.all();
+        let books: IBook[] = data;
         return { books };
 	}
 </script>
@@ -14,13 +14,12 @@
     import { 
         Button,
         Card,
-        Row,
-        Col,
         CardTitle,
         CardSubtitle,
         CardActions,
         Icon
     } from 'svelte-materialify';
+
     import Toolbar from '../../components/toolbar/Toolbar.svelte';
     import Footer from '../../components/footer/Footer.svelte';
 
