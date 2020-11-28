@@ -2,7 +2,6 @@
     import { bookservice } from '../../services/book/bookservice';
     import type { IBook } from '../../services/book/shared/ibook';
 
-    
 	export async function preload({ params }) {
         const book_id: number = params.slug;
         let { data }: any = await bookservice.byID(book_id);
@@ -34,9 +33,15 @@
     }
 </script>
 
+<style>
+    img {
+        width: 100%;
+    }
+</style>
+
 <Toolbar title="Details"/>
 <div class="d-flex justify-center mt-4 mb-4">
-    <Card style="max-width:350px;" shaped raised>
+    <Card style="max-width:80%;" shaped raised>
         <img src="//picsum.photos/350" alt="background" />
         <CardTitle>{ book.title }</CardTitle>
         <CardSubtitle>

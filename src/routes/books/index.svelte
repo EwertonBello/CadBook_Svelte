@@ -2,7 +2,6 @@
     import { bookservice } from '../../services/book/bookservice';
     import type { IBook } from '../../services/book/shared/ibook';
 
-    
 	export async function preload() {
         let { data }: any = await bookservice.all();
         let books: IBook[] = data;
