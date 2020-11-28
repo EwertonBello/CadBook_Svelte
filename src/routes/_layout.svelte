@@ -9,6 +9,7 @@
 		position:relative;
 		height:100%;
 	}
+
 </style>
 
 <MaterialApp theme={$theme}>
