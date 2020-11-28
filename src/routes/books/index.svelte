@@ -14,13 +14,12 @@
     import { 
         Button,
         Card,
-        Row,
-        Col,
         CardTitle,
         CardSubtitle,
         CardActions,
         Icon
     } from 'svelte-materialify';
+
     import Toolbar from '../../components/toolbar/Toolbar.svelte';
     import Footer from '../../components/footer/Footer.svelte';
 
