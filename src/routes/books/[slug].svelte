@@ -7,42 +7,45 @@
         let { data }: any = await bookservice.byID(book_id);
         let book: IBook = data;
         return { book };
-	}
+    }
+
 </script>
 
 <script lang="ts">
     import {
-      Card,
-      CardTitle,
-      CardSubtitle,
-      CardActions,
-      Button,
-      Icon,
-      Divider,
+        Card,
+        CardTitle,
+        CardSubtitle,
+        CardActions,
+        Button,
+        Icon,
+        Divider,
     } from 'svelte-materialify';
+    
     import { slide } from 'svelte/transition';
-  
+    import ImageLoader from 'svelte-lazy-image-loader';
+    
     import Toolbar from '../../components/toolbar/Toolbar.svelte';
     import Footer from '../../components/footer/Footer.svelte';
     
-    export let book: IBook;
-
+    export let book: IBook;    
+    
     let active = false;
     function toggleDataAuthor() {
-      active = !active;
+        active = !active;
     }
-</script>
 
-<style>
-    img {
-        width: 100%;
-    }
-</style>
+</script>
 
 <Toolbar title="Details"/>
 <div class="d-flex justify-center mt-4 mb-4">
     <Card style="max-width:80%;" shaped raised>
-        <img src="//picsum.photos/350" alt="background" />
+        <ImageLoader
+            url="//picsum.photos/350"
+            alt="random image"
+            imageWidth="100%"
+            placeholderWidth="100%"
+        />
         <CardTitle>{ book.title }</CardTitle>
         <CardSubtitle>
             Autor: { book.user.name }<br/>
