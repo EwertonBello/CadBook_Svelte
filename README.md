@@ -5,7 +5,7 @@ Consuming API CadBook from (https://cadbook.herokuapp.com/).
 
 # Demo
 
-The app is running in (https://ewertonbello.github.io/CadBook_Svelte/).
+The app is running in (https://cadbooksvelte.netlify.app/).
 
 # Running the project
 
