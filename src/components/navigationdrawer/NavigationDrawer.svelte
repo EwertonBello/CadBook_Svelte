@@ -23,7 +23,7 @@
 
 <NavigationDrawer absolute active={$active}>
     <List>
-        <a href="/" on:click={toggleNavigation}>
+        <a href="./" on:click={toggleNavigation}>
             <ListItem>
                 <span slot="prepend">
                     <Icon class="mdi mdi-home" />

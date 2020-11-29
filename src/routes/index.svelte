@@ -6,7 +6,6 @@
         Row,
         Col,
     } from "svelte-materialify";
-	import book_lover from 'images/book_lover.svg';
     import Footer from '../components/footer/Footer.svelte';
 	import Toolbar from '../components/toolbar/Toolbar.svelte';
 
@@ -48,7 +47,7 @@
 						Deixe sua imaginação correr solta!!
 					</p>
 					<div class="d-flex flex-wrap">
-						<a href="/books/" class="text-decoration-none text-darken-2">
+						<a href="./books/" class="text-decoration-none text-darken-2">
 							<Button size="large" class="primary-color">
 								<Icon class="mdi mdi-book pr-3"/>
 								COMEÇAR
@@ -57,7 +56,7 @@
 					</div>
 				</Col>
 				<Col class="d-flex justify-center align-center flex-column" md="5">
-					<img src="{ book_lover }" alt="Girl reading" />
+					<img src="book_lover.svg" alt="Girl reading" />
 				</Col>
 			</Row>
 		</Container>
