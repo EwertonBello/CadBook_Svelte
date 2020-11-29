@@ -4,7 +4,7 @@
 	"name": "CadBookSvelte",
 	"short_name": "CadBookSvelte",
 	"display": "minimal-ui",
-	"start_url": "/",
+	"start_url": "./",
 	"icons": [
 		{
 			"src": "logo-192.png",
