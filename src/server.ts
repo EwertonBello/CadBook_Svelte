@@ -8,7 +8,6 @@ const dev = NODE_ENV === 'development';
 
 polka()
 	.use(
-		'CadBook_Svelte',
 		compression({ threshold: 0 }),
 		sirv('static', { dev }),
 		sapper.middleware()
