@@ -4,6 +4,7 @@
 	"name": "CadBookSvelte",
 	"short_name": "CadBookSvelte",
 	"display": "minimal-ui",
+	"scope": "/",
 	"start_url": "https://ewertonbello.github.io/CadBook_Svelte/",
 	"icons": [
 		{
