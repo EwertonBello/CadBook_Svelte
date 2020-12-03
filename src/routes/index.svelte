@@ -47,7 +47,7 @@
 						Deixe sua imaginação correr solta!!
 					</p>
 					<div class="d-flex flex-wrap">
-						<a href="/books/" class="text-decoration-none text-darken-2">
+						<a rel="prefetch" href="/books/" class="text-decoration-none text-darken-2">
 							<Button size="large" class="primary-color">
 								<Icon class="mdi mdi-book pr-3"/>
 								COMEÇAR
