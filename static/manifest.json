@@ -3,7 +3,7 @@
 	"theme_color": "#333333",
 	"name": "CadBookSvelte",
 	"short_name": "CadBookSvelte",
-	"display": "minimal-ui",
+	"display": "standalone",
 	"start_url": "/",
 	"icons": [
 		{
