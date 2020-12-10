@@ -38,7 +38,7 @@
 </script>
 
 <Toolbar title="Details"/>
-<div class="d-flex justify-center mt-4 mb-4">
+<div class="d-flex justify-center mt-4 mb-4 pt-3">
     <Card style="max-width:80%;" shaped raised>
         <ImageLoader
             url="//picsum.photos/350"
