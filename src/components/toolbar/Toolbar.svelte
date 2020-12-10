@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
   import { AppBar, Button, Icon } from "svelte-materialify";
 
   import NavigationDrawer from "../navigationdrawer/NavigationDrawer.svelte";
@@ -12,13 +13,28 @@
   }
 
   function toggleTheme() {
-    theme.update((theme)=>{      
-      if (theme === "light") {
-        return "dark";
+    theme.update(()=>{
+      let new_theme: string = "light";
+      let old_theme: string = window.localStorage.getItem('theme');
+      if (old_theme === "light") {
+        new_theme = "dark";
       }
-      return "light";
+      window.localStorage.setItem('theme', new_theme);
+      return new_theme;
     })
   }
+
+  onMount(() => {
+    theme.update(()=>{
+      let theme: string = window.localStorage.getItem('theme');
+      if (theme) {
+        return theme;
+      }
+      let default_theme: string = "light";
+      window.localStorage.setItem('theme', default_theme);
+      return default_theme;
+    })
+  });
 </script>
 
 <AppBar>

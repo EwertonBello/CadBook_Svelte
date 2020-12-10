@@ -1,7 +1,7 @@
 {
   "name": "CadBookSvelte",
   "description": "CadBookSvelte",
-  "version": "1.9.2",
+  "version": "1.10.2",
   "scripts": {
     "dev": "sapper dev",
     "build": "sapper build --legacy",
