@@ -37,7 +37,7 @@
   });
 </script>
 
-<AppBar>
+<AppBar fixed style="width: 100%">
   <div slot="icon">
     <Button icon fab depressed on:click={toggleNavigation}>
       <Icon class="mdi mdi-menu" />

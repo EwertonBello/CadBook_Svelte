@@ -28,7 +28,7 @@
 
 <Toolbar title="Books"/>
 
-<div class="container pl-2 pr-2">
+<div class="container pl-2 pr-2 pt-1">
     {#each books as book}
         <div class="d-flex justify-center mt-4 mb-4">
             <Card style="max-width:80%">

@@ -7,6 +7,7 @@
 <style>
 	.layout {
 		position:relative;
+		margin-top: 56px;
 		height:100%;
 	}
 
