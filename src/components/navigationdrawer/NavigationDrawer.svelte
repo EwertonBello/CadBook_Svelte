@@ -8,9 +8,19 @@
     } from 'svelte-materialify';
 
     import { active } from './NavigationDrawerStore';
+    import { isLoading } from "../toolbar/LoadingStore";
 
     function toggleNavigation() {
       active.update((active)=> active = !active)
+    }
+
+    function setLoading(value = true) {
+        isLoading.update((isLoading) => (isLoading = value));
+    }
+
+    function goBooks() {
+        toggleNavigation();
+        setLoading(true);
     }
 
 </script>
@@ -31,7 +41,7 @@
                 Home
             </ListItem>
         </a>
-        <a rel="prefetch" href="books" on:click={toggleNavigation}>
+        <a rel="prefetch" href="books" on:click={goBooks}>
             <ListItem>
                 <span slot="prepend">
                     <Icon class="mdi mdi-book" />

@@ -1,9 +1,10 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { AppBar, Button, Icon } from "svelte-materialify";
+  import { AppBar, Button, Icon, ProgressLinear } from "svelte-materialify";
 
   import NavigationDrawer from "../navigationdrawer/NavigationDrawer.svelte";
   import { active } from "../navigationdrawer/NavigationDrawerStore";
+  import { isLoading } from "./LoadingStore";
   import { theme } from "../../theme/themeStore";
 
   export let title: string;
@@ -35,6 +36,7 @@
       return default_theme;
     })
   });
+
 </script>
 
 <AppBar fixed style="width: 100%">
@@ -49,4 +51,7 @@
     <Icon class="mdi mdi-brightness-4" />
   </Button>
 </AppBar>
+{#if $isLoading}
+  <ProgressLinear style="position: fixed" color="red" indeterminate/>
+{/if}
 <NavigationDrawer />
