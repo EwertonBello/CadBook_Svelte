@@ -1,10 +1,16 @@
 <script context="module" lang="ts">
     import { bookservice } from '../../services/book/bookservice';
     import type { IBook } from '../../services/book/shared/ibook';
+    import { isLoading } from "../../components/toolbar/LoadingStore";
+
+    function setLoading(value = true) {
+        isLoading.update((isLoading) => (isLoading = value));
+    }
 
 	export async function preload() {
         let { data }: any = await bookservice.all();
         let books: IBook[] = data;
+        setLoading(false);
         return { books };
 	}
 </script>
