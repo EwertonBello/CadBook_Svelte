@@ -1,13 +1,16 @@
-<script>
+<script lang="ts">
 	import {
         Container,
         Button,
         Icon,
         Row,
-        Col,
+		Col,
+		ProgressLinear
     } from "svelte-materialify";
     import Footer from '../components/footer/Footer.svelte';
 	import Toolbar from '../components/toolbar/Toolbar.svelte';
+
+	let isLoading: boolean = false;
 
 </script>
 
@@ -30,6 +33,10 @@
 
 <Toolbar title="Home"/>
 
+{#if isLoading}
+  <ProgressLinear style="position: fixed" color="red" indeterminate/>
+{/if}
+
 <div class="container pb-2">
 	<div class="theme--dark" id="home">
 		<Container class="pt-6 pb-6">
@@ -48,7 +55,7 @@
 					</p>
 					<div class="d-flex flex-wrap">
 						<a rel="prefetch" href="/books/" class="text-decoration-none text-darken-2">
-							<Button size="large" class="primary-color">
+							<Button on:click={()=>isLoading=true} size="large" class="primary-color">
 								<Icon class="mdi mdi-book pr-3"/>
 								COMEÇAR
 							</Button>
