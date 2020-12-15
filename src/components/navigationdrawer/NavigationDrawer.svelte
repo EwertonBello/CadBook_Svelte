@@ -10,8 +10,11 @@
     import { active } from './NavigationDrawerStore';
     import { isLoading } from "../toolbar/LoadingStore";
 
+    import { stores } from '@sapper/app';
+    const { page } = stores();
+
     function toggleNavigation() {
-      active.update((active)=> active = !active)
+        active.update((active) => active = !active);
     }
 
     function setLoading(value = true) {
@@ -20,7 +23,8 @@
 
     function goBooks() {
         toggleNavigation();
-        setLoading(true);
+        if ($page.path !== "/books")
+            setLoading(true);
     }
 
 </script>
